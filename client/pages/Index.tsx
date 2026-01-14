@@ -111,14 +111,14 @@ export default function Index() {
   /* -------------------- UI -------------------- */
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {!isLoggedIn ? (
         /* -------------------- LOGIN UI -------------------- */
         <div className="min-h-screen flex items-center justify-center px-4 py-12">
           <div className="w-full max-w-md">
             <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-8">
               <h1 className="text-3xl font-bold text-gray-900 text-center mb-2">
-                Admin Login
+                Login
               </h1>
               <p className="text-center text-gray-500 text-sm mb-8">
                 Enter your credentials to access the dashboard
@@ -127,7 +127,7 @@ export default function Index() {
               <form onSubmit={handleLogin} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
+                    Username
                   </label>
                   <input
                     type="email"
@@ -165,22 +165,22 @@ export default function Index() {
               </form>
 
               <p className="text-xs text-gray-500 text-center mt-6">
-                Internal use only
+                Internal use only dont share to your boyfriend or even your family
               </p>
             </div>
           </div>
         </div>
       ) : (
         /* -------------------- DASHBOARD -------------------- */
-        <div className="min-h-screen bg-gray-50">
-          <div className="bg-white border-b border-gray-200">
+        <div className="bg-gradient from-slate-900 via-purple-900 to-slate-900">
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-1">
             <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between">
-              <h1 className="text-3xl font-bold text-gray-900">
-                Merchant Trigger Panel
+              <h1 className="text-xl font-bold text-gray-900">
+                Merchant Data Trigger Panel
               </h1>
               <button
                 onClick={handleLogout}
-                className="px-4 py-2 text-sm border rounded-lg"
+                className="bg-red px-4 py-2 text-sm border rounded-lg"
               >
                 Logout
               </button>
@@ -232,7 +232,7 @@ export default function Index() {
                   {isSubmitting && (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   )}
-                  {isSubmitting ? "Sending..." : "Send to Workflow"}
+                  {isSubmitting ? "Sending..." : "Continue"}
                 </button>
               </form>
             </div>
